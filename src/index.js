@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function RootComponent () {
-  return <div>Hello World!</div>;
-}
+import RootComponent from './components/RootComponent';
 
 ReactDOM.render(<RootComponent />, document.getElementById('root'));
