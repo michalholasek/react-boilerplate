@@ -22,7 +22,7 @@ function composeSuccessOutput(stats) {
                    });
 
   assets.forEach(asset => {
-    console.log(`  ${chalk.bold(asset.name)} ${asset.size} bytes`);
+    console.log(`  ${chalk.bold.white(asset.name)} ${asset.size} bytes`);
   });
 
   console.log();
