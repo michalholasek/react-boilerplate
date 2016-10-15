@@ -1,0 +1,6 @@
+react-boilerplate
+=================
+
+
+## License
+MIT

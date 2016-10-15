@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "Debug start.js",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/scripts/start.js",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceRoot}",
+      "preLaunchTask": null,
+      "runtimeExecutable": null,
+      "runtimeArgs": [
+        "--nolazy"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "internalConsole",
+      "sourceMaps": false,
+      "outFiles": []
+    }
+  ]
+}

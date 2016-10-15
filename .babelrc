@@ -1,0 +1,8 @@
+{
+  "plugins": [
+    "syntax-jsx",
+    "transform-es2015-modules-commonjs",
+    "transform-react-jsx",
+    "transform-react-jsx-self"
+  ]
+}
