@@ -16,5 +16,5 @@ new WebpackDevServer(compiler, {
 }).listen(3000, 'localhost', function (err) {
   if (err) return console.log(err);
   process.stdout.write('\x1bc'); // Clear console completely in the beginning
-  console.log('> Server started at http://localhost:3000/');
+  console.log('Server started at http://localhost:3000/');
 });

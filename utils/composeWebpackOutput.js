@@ -22,12 +22,14 @@ function composeSuccessOutput(stats) {
                    });
 
   assets.forEach(asset => {
-    console.log(`  ${chalk.bold.white(asset.name)} ${asset.size} bytes`);
+    console.log(`${chalk.bold.white(asset.name)} ${asset.size} bytes`);
   });
 
+  const success = `${chalk.reset.inverse.bold.green(' SUCCESS ')}`;
+  const time = ` Time: ${stats.endTime - stats.startTime}ms`;
+
   console.log();
-  console.log(`> Time: ${stats.endTime - stats.startTime}ms`);
-  console.log(`> ${chalk.bold.green('SUCCESS!')}`);
+  console.log(`${success}${time}`);
 }
 
 function composeErrorOutput(stats) {
@@ -35,7 +37,11 @@ function composeErrorOutput(stats) {
     .map(error => formatErrorMessage(error.message))
     .forEach(message => { console.log(); console.log(message); });
 
-  console.log(`> ${chalk.bold.red('FAILURE!')}`);
+  const failure = `${chalk.reset.inverse.bold.red(' FAILURE ')}`;
+  const time = ` Time: ${stats.endTime - stats.startTime}ms`;
+
+  console.log();
+  console.log(`${failure}${time}`);
 }
 
 function formatErrorMessage(message) {
@@ -45,9 +51,7 @@ function formatErrorMessage(message) {
 
   const firstLine = message.split('\n')[0];
 
-  return message
-           .replace(firstLine, `  ${chalk.bold.red(firstLine)}`)
-           .replace(/\n/g, '\n  ');
+  return message.replace(firstLine, `${chalk.bold.red(firstLine)}`);
 }
 
 module.exports = composeWebpackOutput;
