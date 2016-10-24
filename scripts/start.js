@@ -10,8 +10,9 @@ const compiler = webpack(config);
 compiler.plugin('done', composeWebpackOutput);
 
 new WebpackDevServer(compiler, {
-  publicPath: config.output.publicPath,
   historyApiFallback: true,
+  hot: true,
+  publicPath: config.output.publicPath,
   quiet: true
 }).listen(3000, 'localhost', function (err) {
   if (err) return console.log(err);

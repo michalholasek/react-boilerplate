@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 const sourcePath = path.resolve(__dirname, '../src');
 
@@ -7,6 +8,7 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:3000/',
+    'webpack/hot/dev-server',
     './src/index.js'
   ],
   module: {
@@ -34,6 +36,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
