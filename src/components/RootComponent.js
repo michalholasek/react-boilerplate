@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './RootComponent.css';
+
 export default function RootComponent() {
-  return <div>Hello World!</div>;
+  return <div className="RootComponent">Hello World!</div>;
 }
